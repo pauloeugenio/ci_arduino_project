@@ -73,4 +73,5 @@ jobs:
       # in the build matrix.
       - name: Compile Sketch
         #run: arduino-cli compile --fqbn ${{ matrix.fqbn }} ./blink
-        run: arduino-cli compile --fqbn $ ./ci_arduino_project/Blink --warnings more
+        #run: arduino-cli compile --fqbn $ ./Blink --warnings more
+        run: arduino-cli compile --fqbn $ ./examples/Simple_Blink --warnings more
