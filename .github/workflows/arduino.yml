@@ -57,8 +57,20 @@ jobs:
         run: |
           arduino-cli core update-index
           arduino-cli core install ${{ matrix.arduino-platform }}
+   
+   
+     #Placas de terceiros  
+     # arduino-cli core update-index --additional-urls https://raw.githubusercontent.com/sparkfun/Arduino_Boards/master/IDE_Board_Manager/package_sparkfun_index.json
+     # arduino-cli core install SparkFun:avr@1.1.5 --additional-urls https://raw.githubusercontent.com/sparkfun/Arduino_Boards/master/IDE_Board_Manager/package_sparkfun_index.json
+      
+     #Instalar Bibliotecas:
+     # - name: Install libraries
+     # run: arduino-cli lib install "Adafruit_NeoPixel@1.7.0"
+          
+          
           
       # Finally, we compile the sketch, using the FQBN that was set
       # in the build matrix.
       - name: Compile Sketch
-        run: arduino-cli compile --fqbn ${{ matrix.fqbn }} ./blink
+        #run: arduino-cli compile --fqbn ${{ matrix.fqbn }} ./blink
+        run: arduino-cli compile --fqbn $ ./Blink --warnings more
